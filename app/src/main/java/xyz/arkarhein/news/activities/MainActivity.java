@@ -1,4 +1,4 @@
-package xyz.arkarhein.padc_3_f_akh_mm_news;
+package xyz.arkarhein.news.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import xyz.arkarhein.news.R;
 
 public class MainActivity extends AppCompatActivity {
 
