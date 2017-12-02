@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <ImageView
+        android:id="@+id/iv_publication_logo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/img_dummy_publication_eleven"
+        />
+
+    <TextView
+        android:id="@+id/tv_publication_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eleven Media"
+        android:layout_toRightOf="@id/iv_publication_logo"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_publication_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posted At:Jan 01 - 6:30AM"
+        android:layout_below="@id/tv_publication_title"
+        android:layout_alignLeft="@id/tv_publication_title"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_publication_brief_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="သူ့ဖခင်အမွေ ချစ် Fan တို့ရေ လက်မှတ်များကိုလည်း ကြည်ရှု့မည့်ရက် မတိုင်ခင် (၃)ရက် ကြိုတင်ဝယ်ယူထားလို့ရပြီနော်…
+JCGV Junction City နှင့် JCGV City Mall (St.John) တို့တွင် ဖုန်း Booking လက်ခံနေပြီး
+JCGV Junction City တွင်တော့ Viber ကနေတဆင့် Booking လက်ခံနေပါပြီနော်…....
+#ဘဝအမောတွေပြေစေဖို့ #JCGVမှာဆုံကြစို ့....."
+        android:layout_below="@id/iv_publication_logo"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="14sp"
+        android:textColor="@color/primary_text"
+        android:lineSpacingMultiplier="1.3"
+        android:maxLines="4"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/iv_publication_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/black_panther_poster"
+        android:layout_below="@id/tv_publication_brief_news"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        />
+</RelativeLayout>
