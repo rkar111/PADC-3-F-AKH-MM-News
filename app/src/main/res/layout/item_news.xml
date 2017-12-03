@@ -1,62 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
-    <ImageView
-        android:id="@+id/iv_publication_logo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@drawable/img_dummy_publication_eleven"
-        />
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/tv_publication_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eleven Media"
-        android:layout_toRightOf="@id/iv_publication_logo"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:textColor="@color/primary_text"
-        android:textSize="16sp"
-        />
-
-    <TextView
-        android:id="@+id/tv_publication_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Posted At:Jan 01 - 6:30AM"
-        android:layout_below="@id/tv_publication_title"
-        android:layout_alignLeft="@id/tv_publication_title"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/secondary_text"
-        android:textSize="14sp"/>
-
-    <TextView
-        android:id="@+id/tv_publication_brief_news"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="သူ့ဖခင်အမွေ ချစ် Fan တို့ရေ လက်မှတ်များကိုလည်း ကြည်ရှု့မည့်ရက် မတိုင်ခင် (၃)ရက် ကြိုတင်ဝယ်ယူထားလို့ရပြီနော်…
-JCGV Junction City နှင့် JCGV City Mall (St.John) တို့တွင် ဖုန်း Booking လက်ခံနေပြီး
-JCGV Junction City တွင်တော့ Viber ကနေတဆင့် Booking လက်ခံနေပါပြီနော်…....
-#ဘဝအမောတွေပြေစေဖို့ #JCGVမှာဆုံကြစို ့....."
-        android:layout_below="@id/iv_publication_logo"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:textSize="14sp"
-        android:textColor="@color/primary_text"
-        android:lineSpacingMultiplier="1.3"
-        android:maxLines="4"
-        android:ellipsize="end"/>
-
-    <ImageView
-        android:id="@+id/iv_publication_image"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/black_panther_poster"
-        android:layout_below="@id/tv_publication_brief_news"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitCenter"
-        />
-</RelativeLayout>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_publication_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img_dummy_publication_eleven" />
+
+        <TextView
+            android:id="@+id/tv_publication_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/iv_publication_logo"
+            android:text="Eleven Media"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_publication_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_publication_title"
+            android:layout_below="@id/tv_publication_title"
+            android:layout_marginTop="4dp"
+            android:text="Posted At:Jan 01 - 6:30AM"
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/btn_user_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_favorite_border_black_40dp"
+            android:tint="@color/primary" />
+
+        <TextView
+            android:id="@+id/tv_publication_brief_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_publication_logo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="3"
+            android:text="@string/news"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_publication_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_publication_brief_news"
+            android:layout_marginTop="16dp"
+            android:scaleType="center"
+            android:src="@drawable/black_panther_poster" />
+
+        <TextView
+            android:id="@+id/lbl_users_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_publication_image"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="3 Likes - 3 Comments - Sent to 6 people"
+            android:textColor="@color/primary" />
+
+        <LinearLayout
+            android:id="@+id/ll_user_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_users_info"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/btn_user_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableLeft="@drawable/ic_chat_bubble_outline_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/primary"
+                    android:text="Comment"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/btn_user_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableLeft="@drawable/ic_send_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/primary"
+                    android:text="Send To"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
