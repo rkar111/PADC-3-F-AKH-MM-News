@@ -56,9 +56,8 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:ellipsize="end"
-            android:lineSpacingMultiplier="1.3"
-            android:maxLines="3"
-            android:text="@string/news"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/dummy_news"
             android:textColor="@color/primary_text"
             android:textSize="14sp" />
 

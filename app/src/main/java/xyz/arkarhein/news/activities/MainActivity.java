@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),
-                LinearLayoutManager.HORIZONTAL, false);
+                LinearLayoutManager.VERTICAL, false);
 
         rvNews.setLayoutManager(linearLayoutManager);
 
