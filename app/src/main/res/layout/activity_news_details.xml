@@ -2,22 +2,35 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="256dp">
+            android:layout_height="256dp"
+            app:contentScrim="@color/primary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_news_details-images"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"/>
+
+            <!--
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/blackpanther_new_poster" />
+                android:src="@drawable/blackpanther_new_poster"
+                android:fitsSystemWindows="true"/>
+                -->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -28,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="48dp"
                     android:layout_marginLeft="16dp"
                     android:scaleType="center"
                     android:src="@drawable/img_dummy_publication_eleven" />
@@ -57,6 +70,11 @@
 
             </RelativeLayout>
 
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/news_details_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -72,23 +90,31 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|right" />
 
-    <RelativeLayout
-        android:id="@+id/rl_news_details_main_content"
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv_news_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/tv_news_black_panther"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/dummy_news_black_panther"
-            android:textColor="@color/primary_text"
-            android:textSize="16sp" />
+        <RelativeLayout
+            android:id="@+id/rl_news_details_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_news_black_panther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/dummy_news_black_panther"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </android.support.design.widget.CoordinatorLayout>
