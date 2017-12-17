@@ -8,6 +8,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.arkarhein.news.R;
+import xyz.arkarhein.news.delegates.NewsActionDelegate;
 
 /**
  * Created by Arkar Hein on 12/3/2017.
@@ -15,14 +16,17 @@ import xyz.arkarhein.news.R;
 
 public class itemNewsViewHolder extends RecyclerView.ViewHolder {
 
+    private NewsActionDelegate mNewsActionDelegate;
 
-    public itemNewsViewHolder(View itemView) {
+    public itemNewsViewHolder(View itemView, NewsActionDelegate newsActionDelegate) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+        mNewsActionDelegate = newsActionDelegate;
     }
 
     @OnClick(R.id.cv_news_items_root)
     public void onTapNewsItem(View view) {
-        Toast.makeText(view.getContext(), "News Item Clicked", Toast.LENGTH_LONG).show();
+        //Toast.makeText(view.getContext(), "News Item Clicked", Toast.LENGTH_LONG).show();
+        mNewsActionDelegate.onTapNewsItem();
     }
 }

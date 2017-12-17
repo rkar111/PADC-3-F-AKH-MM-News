@@ -1,5 +1,6 @@
 package xyz.arkarhein.news.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +18,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.NewsAdapter;
+import xyz.arkarhein.news.delegates.NewsActionDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NewsActionDelegate {
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-    private NewsAdapter nNewsAdapter = new NewsAdapter();
+    private NewsAdapter nNewsAdapter = new NewsAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,5 +79,26 @@ public class MainActivity extends AppCompatActivity {
     public void onTapFab(View view) {
         Snackbar.make(view, "Replace with your own action - ButterKnife", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
+    }
+
+    @Override
+    public void onTapNewsItem() {
+        Intent intent = new Intent(getApplicationContext(), NewsDetailsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapCommentButton() {
+
+    }
+
+    @Override
+    public void onTapSendButton() {
+
+    }
+
+    @Override
+    public void onTapFavoriteButton() {
+
     }
 }
