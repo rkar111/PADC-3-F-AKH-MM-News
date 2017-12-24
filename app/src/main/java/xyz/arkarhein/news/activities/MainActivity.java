@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.NewsAdapter;
+import xyz.arkarhein.news.data.model.NewsModel;
 import xyz.arkarhein.news.delegates.NewsActionDelegate;
 
 public class MainActivity extends AppCompatActivity implements NewsActionDelegate {
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         rvNews.setLayoutManager(gridLayoutManager);*/
 
         rvNews.setAdapter(nNewsAdapter);
+
+        NewsModel.getsObjInstance().loadNews();
 
     }
 
