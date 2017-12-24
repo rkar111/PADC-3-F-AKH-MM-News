@@ -9,17 +9,24 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import xyz.arkarhein.news.MMNewsApp;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.NewsAdapter;
 import xyz.arkarhein.news.data.model.NewsModel;
 import xyz.arkarhein.news.delegates.NewsActionDelegate;
+import xyz.arkarhein.news.events.LoadedNewsEvent;
 
 public class MainActivity extends AppCompatActivity implements NewsActionDelegate {
 
@@ -32,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-    private NewsAdapter nNewsAdapter = new NewsAdapter(this);
+    private NewsAdapter mNewsAdapter = new NewsAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +57,22 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         /*GridLayoutManager gridLayoutManager=new GridLayoutManager(getApplicationContext(),2);
         rvNews.setLayoutManager(gridLayoutManager);*/
 
-        rvNews.setAdapter(nNewsAdapter);
+        rvNews.setAdapter(mNewsAdapter);
 
         NewsModel.getsObjInstance().loadNews();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -103,5 +122,11 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @Override
     public void onTapFavoriteButton() {
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onNewsLoaded(LoadedNewsEvent event) {
+        Log.d(MMNewsApp.LOG_TAG, "onNewsLoaded" + event.getNewsList().size());
+        mNewsAdapter.setNews(event.getNewsList());
     }
 }

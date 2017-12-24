@@ -61,6 +61,7 @@
             android:layout_marginRight="8dp"
             android:ellipsize="end"
             android:lineSpacingMultiplier="1.2"
+            android:maxLines="3"
             android:text="@string/dummy_news"
             android:textColor="@color/primary_text"
             android:textSize="14sp" />
@@ -71,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_publication_brief_news"
             android:layout_marginTop="16dp"
-            android:scaleType="center"
+            android:scaleType="fitCenter"
             android:src="@drawable/black_panther_poster" />
 
         <TextView

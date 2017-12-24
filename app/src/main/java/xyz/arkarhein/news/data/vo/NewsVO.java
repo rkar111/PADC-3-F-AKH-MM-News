@@ -1,5 +1,7 @@
 package xyz.arkarhein.news.data.vo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,18 +10,23 @@ import java.util.List;
 
 public class NewsVO {
 
+    @SerializedName("news-id")
     private String newsId;
     private String brief;
     private String details;
     private List<String> images;
+
+
+    @SerializedName("posted-date")
     private String postedDate;
 
     private PublicationVO publication;
 
-    private List<FavoriteVO> favorite;
+    private List<FavoriteVO> favorites;
 
-    private List<CommentVO> comment;
+    private List<CommentVO> comments;
 
+    @SerializedName("sent-tos")
     private List<SentTosVO> sentTos;
 
     public String getNewsId() {
@@ -47,11 +54,11 @@ public class NewsVO {
     }
 
     public List<FavoriteVO> getFavorite() {
-        return favorite;
+        return favorites;
     }
 
     public List<CommentVO> getComment() {
-        return comment;
+        return comments;
     }
 
     public List<SentTosVO> getSentTos() {
