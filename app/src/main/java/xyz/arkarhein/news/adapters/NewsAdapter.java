@@ -34,7 +34,7 @@ public class NewsAdapter extends RecyclerView.Adapter<itemNewsViewHolder> {
         Context context = parent.getContext();
         LayoutInflater inflator = LayoutInflater.from(context);
         View newsItemView = inflator.inflate(R.layout.item_news, parent, false);
-        itemNewsViewHolder itemNewsViewHolder = new itemNewsViewHolder(newsItemView, mNewsActionDelegate);
+        itemNewsViewHolder itemNewsViewHolder = new itemNewsViewHolder(newsItemView,mNewsActionDelegate);
         return itemNewsViewHolder;
     }
 
