@@ -170,7 +170,7 @@
             android:padding="8dp"
             android:text="@string/international_news_small_1"
             android:textColor="@color/white_full"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
     </android.support.v7.widget.CardView>
 
@@ -191,7 +191,7 @@
             android:padding="8dp"
             android:text="@string/international_news_small_2"
             android:textColor="@color/white_full"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
     </android.support.v7.widget.CardView>
 
@@ -212,7 +212,7 @@
             android:padding="8dp"
             android:text="@string/international_news_small_3"
             android:textColor="@color/white_full"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
     </android.support.v7.widget.CardView>
 
