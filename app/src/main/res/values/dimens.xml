@@ -7,4 +7,10 @@
     <dimen name="publication_distance">16dp</dimen>
     <dimen name="publication_distance_medium">8dp</dimen>
     <dimen name="publication_distance_small">4dp</dimen>
+
+    <dimen name="sports_news_image_width">150dp</dimen>
+    <dimen name="sports_news_image_height">100dp</dimen>
+
+    <dimen name="international_news_image_height">250dp</dimen>
+    <dimen name="international_medium_news_image_height">150dp</dimen>
 </resources>

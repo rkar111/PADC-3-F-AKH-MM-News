@@ -20,5 +20,9 @@
     <color name="white_full">#fff</color>
     <color name="balck_full">#000</color>
 
+    <color name="dark_pink">#880e4f</color>
+    <color name="pale_pink">#f48fb1</color>
+    <color name="grey">#bdbdbd</color>
+
 </resources>
 
