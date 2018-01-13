@@ -13,4 +13,7 @@
 
     <dimen name="international_news_image_height">250dp</dimen>
     <dimen name="international_medium_news_image_height">150dp</dimen>
+
+    <dimen name="international_news_text_width">280dp</dimen>
+    <dimen name="international_news_text_height">80dp</dimen>
 </resources>

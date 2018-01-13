@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.InternationalNewsAdapter;
+import xyz.arkarhein.news.adapters.InternationalNewsDetailsAdapter;
 
 /**
  * Created by Arkar Hein on 1/7/2018.
@@ -24,7 +25,11 @@ public class InternationalNewsFragment extends Fragment {
     @BindView(R.id.rv_international_news)
     RecyclerView rvInternationalNews;
 
+    /*@BindView(R.id.rv_international_news_details)
+    RecyclerView rvInternationalNewsDetails;*/
+
     InternationalNewsAdapter mInternationalNewsAdapter = new InternationalNewsAdapter();
+    //InternationalNewsDetailsAdapter mInternationalNewsDetailsAdapter = new InternationalNewsDetailsAdapter();
 
     @Nullable
     @Override
@@ -36,6 +41,11 @@ public class InternationalNewsFragment extends Fragment {
                 LinearLayoutManager.VERTICAL, false);
         rvInternationalNews.setLayoutManager(linearLayoutManager);
         rvInternationalNews.setAdapter(mInternationalNewsAdapter);
+
+        /*LinearLayoutManager layoutManagerNewsDetails = new LinearLayoutManager(getContext(),
+                LinearLayoutManager.HORIZONTAL, false);
+        rvInternationalNewsDetails.setLayoutManager(layoutManagerNewsDetails);
+        rvInternationalNewsDetails.setAdapter(mInternationalNewsDetailsAdapter);*/
 
         return view;
     }
