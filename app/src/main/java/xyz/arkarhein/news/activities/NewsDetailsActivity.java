@@ -13,6 +13,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.ImagesInNewsDetailsAdapter;
+import xyz.arkarhein.news.data.model.NewsModel;
+import xyz.arkarhein.news.data.vo.NewsVO;
 
 /**
  * Created by Arkar Hein on 12/9/2017.
@@ -42,6 +44,15 @@ public class NewsDetailsActivity extends AppCompatActivity {
         mimagesInNewsDetailsAdapter = new ImagesInNewsDetailsAdapter();
 
         vpNewsDetailsImages.setAdapter(mimagesInNewsDetailsAdapter);
+
+        String newsId = getIntent().getStringExtra("news_id");
+
+        NewsVO news = NewsModel.getsObjInstance().getNewsById(newsId);
+        bindData(news);
+
+    }
+
+    private void bindData(NewsVO news) {
 
     }
 

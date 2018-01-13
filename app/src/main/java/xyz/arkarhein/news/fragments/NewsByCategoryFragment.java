@@ -21,6 +21,7 @@ import xyz.arkarhein.news.MMNewsApp;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.NewsAdapter;
 import xyz.arkarhein.news.data.model.NewsModel;
+import xyz.arkarhein.news.data.vo.NewsVO;
 import xyz.arkarhein.news.delegates.NewsActionDelegate;
 import xyz.arkarhein.news.events.LoadedNewsEvent;
 
@@ -64,8 +65,9 @@ public class NewsByCategoryFragment extends Fragment implements NewsActionDelega
         EventBus.getDefault().unregister(this);
     }
 
+
     @Override
-    public void onTapNewsItem() {
+    public void onTapNewsItem(NewsVO tappedNews) {
 
     }
 

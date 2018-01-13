@@ -52,7 +52,7 @@
             android:src="@drawable/ic_favorite_border_black_40dp"
             android:tint="@color/primary" />
 
-        <TextView
+        <net.aungpyaephyo.mmtextview.components.MMTextView
             android:id="@+id/tv_publication_brief_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
