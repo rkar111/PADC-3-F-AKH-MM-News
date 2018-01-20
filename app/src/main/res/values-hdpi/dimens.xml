@@ -8,4 +8,7 @@
 
     <dimen name="international_news_image_height">250dp</dimen>
     <dimen name="international_medium_news_image_height">150dp</dimen>
+
+    <dimen name="user_profile_width">90dp</dimen>
+    <dimen name="user_profile_height">90dp</dimen>
 </resources>

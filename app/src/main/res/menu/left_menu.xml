@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_all_news"
+        android:checked="true"
+        android:icon="@drawable/ic_all_news_24dp"
+        android:title="@string/menu_all_news" />
+
+    <item
+        android:id="@+id/menu_news_by_category"
+        android:icon="@drawable/ic_news_by_category_24dp"
+        android:title="@string/menu_news_by_category" />
+
+</menu>

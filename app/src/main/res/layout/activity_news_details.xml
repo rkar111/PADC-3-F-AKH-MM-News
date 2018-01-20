@@ -43,7 +43,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="48dp"
                     android:layout_marginLeft="@dimen/publication_distance"
-                    android:scaleType="center"
+                    android:scaleType="fitXY"
                     android:src="@drawable/img_dummy_publication_eleven" />
 
                 <TextView
@@ -102,7 +102,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tv_news_black_panther"
+                android:id="@+id/tv_news_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/publication_distance"

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.arkarhein.news.viewpods.LoginUserViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_background_height">
+
+    <ImageView
+        android:id="@+id/iv_big"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drawer_background" />
+
+    <ImageView
+        android:id="@+id/iv_user_image"
+        android:layout_width="@dimen/user_profile_width"
+        android:layout_height="@dimen/user_profile_height"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dummy_user_picture" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/iv_user_image"
+        android:layout_below="@id/iv_user_image"
+        android:text="Arkar Hein"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_regular_3x" />
+
+    <TextView
+        android:id="@+id/tv_user_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_name"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="+9594033332424"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_regular_2x" />
+</xyz.arkarhein.news.viewpods.LoginUserViewPod>

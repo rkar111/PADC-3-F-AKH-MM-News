@@ -8,6 +8,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +25,18 @@ import xyz.arkarhein.news.data.vo.NewsVO;
  */
 
 public class NewsDetailsActivity extends AppCompatActivity {
+
+    @BindView(R.id.tv_news_details)
+    TextView tvNewsDetails;
+
+    @BindView(R.id.iv_eleven_logo)
+    ImageView ivElevenLogo;
+
+    @BindView(R.id.tv_eleven_name)
+    TextView tvElevenName;
+
+    @BindView(R.id.tv_elven_info)
+    TextView tvDate;
 
     @BindView(R.id.news_details_toolbar)
     Toolbar toolbar;
@@ -53,6 +69,14 @@ public class NewsDetailsActivity extends AppCompatActivity {
     }
 
     private void bindData(NewsVO news) {
+        tvNewsDetails.setText(news.getDetails());
+        tvElevenName.setText(news.getPublication().getTitle());
+        tvDate.setText(news.getPostedDate());
+
+        Glide.with(ivElevenLogo.getContext())
+                .load(news.getPublication().getLogo())
+                .into(ivElevenLogo);
+
 
     }
 

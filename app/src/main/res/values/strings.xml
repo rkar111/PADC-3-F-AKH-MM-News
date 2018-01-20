@@ -17,4 +17,9 @@
     <string name="international_news_small_1">I can\’t describe my feeling : Saudi women finally allowed into games</string>
     <string name="international_news_small_2">David Letterman\'s comeback: can his Netflix show take him back to the top?</string>
     <string name="international_news_small_3">California in revolt: how the progressive state plans to foil the Trump agenda</string>
+
+
+    <string name="title_all_news">All News</string>
+    <string name="menu_all_news">All News</string>
+    <string name="menu_news_by_category">News by Category</string>
 </resources>

@@ -2,8 +2,12 @@ package xyz.arkarhein.news.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
     private NewsAdapter mNewsAdapter = new NewsAdapter(this);
 
     @Override
@@ -50,6 +60,12 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
 
         setSupportActionBar(toolbar);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.title_all_news);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_dehaze_24dp);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false);
 
@@ -59,6 +75,20 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         rvNews.setLayoutManager(gridLayoutManager);*/
 
         rvNews.setAdapter(mNewsAdapter);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.menu_news_by_category) {
+                    Intent intent = new Intent(getApplicationContext(), NewsByCategoryActivity.class);
+                    startActivity(intent);
+                }
+
+
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return false;
+            }
+        });
 
         NewsModel.getsObjInstance().loadNews();
 
@@ -93,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == android.R.id.home) {
+            drawerLayout.openDrawer(GravityCompat.START);
         }
 
         return super.onOptionsItemSelected(item);

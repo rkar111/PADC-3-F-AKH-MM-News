@@ -14,7 +14,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.InternationalNewsAdapter;
-import xyz.arkarhein.news.adapters.InternationalNewsDetailsAdapter;
 
 /**
  * Created by Arkar Hein on 1/7/2018.
