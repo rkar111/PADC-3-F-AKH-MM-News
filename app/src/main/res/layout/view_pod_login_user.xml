@@ -41,4 +41,14 @@
         android:text="+9594033332424"
         android:textColor="@color/white_full"
         android:textSize="@dimen/text_regular_2x" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_user_phone_number"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:text="@string/lbl_logout" />
 </xyz.arkarhein.news.viewpods.LoginUserViewPod>

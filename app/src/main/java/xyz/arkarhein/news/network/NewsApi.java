@@ -5,6 +5,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import xyz.arkarhein.news.network.responses.GetNewsResponse;
+import xyz.arkarhein.news.network.responses.LoginResponse;
 
 /**
  * Created by Arkar Hein on 1/6/2018.
@@ -16,5 +17,11 @@ public interface NewsApi {
     @POST("getMMNews.php")
     Call<GetNewsResponse> getNews(@Field("page") int page,
                                   @Field("access_token") String accessToken);
+
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<LoginResponse> getLogin(@Field("phoneNo") String phoneNo,
+                                 @Field("password") String password);
+
 
 }

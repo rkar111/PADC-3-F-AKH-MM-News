@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.arkarhein.news.viewpods.BeforeLoginViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_background_height">
+
+    <ImageView
+        android:id="@+id/iv_big"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drawer_background" />
+
+    <net.aungpyaephyo.mmtextview.components.MMButton
+        android:id="@+id/btn_to_register"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:text="@string/lbl_to_register" />
+
+    <net.aungpyaephyo.mmtextview.components.MMButton
+        android:id="@+id/btn_to_login"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_to_register"
+        android:layout_alignEnd="@id/btn_to_register"
+
+        android:text="@string/lbl_to_login" />
+
+</xyz.arkarhein.news.viewpods.BeforeLoginViewPod>

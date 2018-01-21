@@ -28,12 +28,18 @@ import butterknife.OnClick;
 import xyz.arkarhein.news.MMNewsApp;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.adapters.NewsAdapter;
+import xyz.arkarhein.news.data.model.LoginUserModel;
 import xyz.arkarhein.news.data.model.NewsModel;
 import xyz.arkarhein.news.data.vo.NewsVO;
+import xyz.arkarhein.news.delegates.BeforeLoginDelegate;
+import xyz.arkarhein.news.delegates.LogInUserDelegate;
 import xyz.arkarhein.news.delegates.NewsActionDelegate;
 import xyz.arkarhein.news.events.LoadedNewsEvent;
+import xyz.arkarhein.news.viewpods.AccountControlViewPod;
+import xyz.arkarhein.news.viewpods.BeforeLoginViewPod;
 
-public class MainActivity extends AppCompatActivity implements NewsActionDelegate {
+public class MainActivity extends AppCompatActivity
+        implements NewsActionDelegate, BeforeLoginDelegate, LogInUserDelegate {
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -51,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     DrawerLayout drawerLayout;
 
     private NewsAdapter mNewsAdapter = new NewsAdapter(this);
+
+    private AccountControlViewPod vpAccountControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +97,10 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
                 return false;
             }
         });
+
+        vpAccountControl = (AccountControlViewPod) navigationView.getHeaderView(0);
+        vpAccountControl.setDelegate((BeforeLoginDelegate) this);
+        vpAccountControl.setDelegate((LogInUserDelegate) this);
 
         NewsModel.getsObjInstance().loadNews();
 
@@ -162,5 +174,22 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     public void onNewsLoaded(LoadedNewsEvent event) {
         Log.d(MMNewsApp.LOG_TAG, "onNewsLoaded" + event.getNewsList().size());
         mNewsAdapter.setNews(event.getNewsList());
+    }
+
+    @Override
+    public void onTapToLogin() {
+        Intent intent = AccountControlActivity.newIntentLogin(getApplicationContext());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapToRegister() {
+        Intent intent = AccountControlActivity.newIntentRegister(getApplicationContext());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapLogout() {
+        LoginUserModel.getsObjInstance().logout();
     }
 }

@@ -22,4 +22,12 @@
     <string name="title_all_news">All News</string>
     <string name="menu_all_news">All News</string>
     <string name="menu_news_by_category">News by Category</string>
+
+    <string name="lbl_to_register"> <i><u>Register</u></i> </string>
+    <string name="lbl_to_login"><i><u>Login</u></i> </string>
+
+    <string name="btn_forgot_password"><i><u>Forgot Password</u></i></string>
+
+    <string name="lbl_logout">Logout</string>
+
 </resources>

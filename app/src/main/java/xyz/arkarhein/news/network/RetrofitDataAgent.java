@@ -12,9 +12,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import xyz.arkarhein.news.adapters.NewsAdapter;
 import xyz.arkarhein.news.events.LoadedNewsEvent;
+import xyz.arkarhein.news.events.SuccessLoginEvent;
 import xyz.arkarhein.news.network.responses.GetNewsResponse;
+import xyz.arkarhein.news.network.responses.LoginResponse;
 
 /**
  * Created by Arkar Hein on 1/6/2018.
@@ -72,6 +73,34 @@ public class RetrofitDataAgent implements NewsDataAgent {
 
             }
         });
+
+    }
+
+    @Override
+    public void loginUser(String phoneNo, String password) {
+        Call<LoginResponse> loginCall = mNewsApi.getLogin(phoneNo, password);
+        loginCall.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                LoginResponse loginResponse = response.body();
+                if (loginResponse != null) {
+                    SuccessLoginEvent event = new SuccessLoginEvent(loginResponse.getLoginUser());
+                    EventBus.getDefault().post(event);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void registerUser(String phoneNo, String password, String name) {
+
 
     }
 }

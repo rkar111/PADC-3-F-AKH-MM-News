@@ -69,7 +69,6 @@
                 android:id="@+id/ll_international_news_medium_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/dark_pink"
                 android:orientation="vertical">
 
                 <TextView
@@ -80,7 +79,7 @@
                     android:maxLines="3"
                     android:padding="8dp"
                     android:text="@string/international_news_medium_one"
-                    android:textColor="@color/white_full"
+                    android:textColor="@color/balck_full"
                     android:textSize="18sp" />
 
                 <TextView
@@ -90,7 +89,8 @@
                     android:drawableLeft="@drawable/ic_watch_later_24dp"
                     android:padding="8dp"
                     android:text="14h"
-                    android:textColor="@color/white_full"
+                    android:textColor="@color/primary_text"
+                    android:drawableTint="@color/primary_text"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -116,7 +116,6 @@
                 android:id="@+id/ll_international_news_medium_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/dark_pink"
                 android:orientation="vertical">
 
                 <TextView
@@ -127,7 +126,7 @@
                     android:maxLines="3"
                     android:padding="8dp"
                     android:text="@string/international_news_medium_two"
-                    android:textColor="@color/white_full"
+                    android:textColor="@color/balck_full"
                     android:textSize="18sp" />
 
                 <TextView
@@ -137,7 +136,8 @@
                     android:drawableLeft="@drawable/ic_watch_later_24dp"
                     android:padding="8dp"
                     android:text="5h"
-                    android:textColor="@color/white_full"
+                    android:textColor="@color/primary_text"
+                    android:drawableTint="@color/primary_text"
                     android:textSize="18sp" />
 
                 <ImageView

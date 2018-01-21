@@ -11,5 +11,12 @@ public interface NewsDataAgent {
      */
     void loadNews();
 
+    /**
+     * @param phoneNo
+     * @param password
+     */
+    void loginUser(String phoneNo, String password);
+
+    void registerUser(String phoneNo, String password, String name);
 
 }
