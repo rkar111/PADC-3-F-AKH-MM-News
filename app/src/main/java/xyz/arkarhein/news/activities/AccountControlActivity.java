@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import xyz.arkarhein.news.R;
+import xyz.arkarhein.news.delegates.LoginScreenDelegate;
 import xyz.arkarhein.news.fragments.LoginFragment;
 import xyz.arkarhein.news.fragments.RegistrationFragment;
 
@@ -15,7 +16,7 @@ import xyz.arkarhein.news.fragments.RegistrationFragment;
  * Created by Arkar Hein on 1/20/2018.
  */
 
-public class AccountControlActivity extends AppCompatActivity {
+public class AccountControlActivity extends AppCompatActivity implements LoginScreenDelegate {
 
     private static final String IE_SCREEN_TYPE = "IE_SCREEN_TYPE";
     private static final int SCREEN_TYPE_LOGIN = 1;
@@ -53,5 +54,14 @@ public class AccountControlActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onTapRegister() {
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
+                .replace(R.id.fl_container, new RegistrationFragment())
+                .addToBackStack("ToRegister")
+                .commit();
     }
 }

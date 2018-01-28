@@ -63,10 +63,14 @@ public class AccountControlViewPod extends FrameLayout {
     }
 
     private void refreshUserSession() {
-        if (LoginUserModel.getsObjInstance().isUserLogin())
+        if (LoginUserModel.getsObjInstance(getContext()).isUserLogin()) {
+            vpBeforeLogin.setVisibility(View.GONE);
+            vpLoginUser.setVisibility(View.VISIBLE);
+            vpLoginUser.bindData(LoginUserModel.getsObjInstance(getContext()).getmLogInUSer());
+        } else {
             vpBeforeLogin.setVisibility(View.VISIBLE);
-        vpLoginUser.setVisibility(View.GONE);
-
+            vpLoginUser.setVisibility(View.GONE);
+        }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

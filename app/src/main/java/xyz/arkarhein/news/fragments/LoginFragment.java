@@ -1,5 +1,6 @@
 package xyz.arkarhein.news.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.arkarhein.news.R;
 import xyz.arkarhein.news.data.model.LoginUserModel;
+import xyz.arkarhein.news.delegates.LoginScreenDelegate;
 import xyz.arkarhein.news.events.SuccessLoginEvent;
 
 /**
@@ -31,6 +33,14 @@ public class LoginFragment extends Fragment {
 
     @BindView(R.id.et_password)
     EditText etPassword;
+
+    private LoginScreenDelegate mLoginScreenDelegate;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mLoginScreenDelegate = (LoginScreenDelegate) context;
+    }
 
     @Override
     public void onStart() {
@@ -52,11 +62,16 @@ public class LoginFragment extends Fragment {
         return view;
     }
 
+    @OnClick(R.id.btn_register)
+    public void onTapRegister(View view) {
+        mLoginScreenDelegate.onTapRegister();
+    }
+
     @OnClick(R.id.btn_login)
     public void onTapLogin(View view) {
         String phoneNo = etEmailOrPhone.getText().toString();
         String password = etPassword.getText().toString();
-        LoginUserModel.getsObjInstance().loginUser(phoneNo, password);
+        LoginUserModel.getsObjInstance(getContext()).loginUser(getContext(),phoneNo, password);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

@@ -1,5 +1,7 @@
 package xyz.arkarhein.news.events;
 
+import android.content.Context;
+
 import xyz.arkarhein.news.data.vo.LoginUserVO;
 
 /**
@@ -10,11 +12,18 @@ public class SuccessLoginEvent {
 
     private LoginUserVO loginUser;
 
-    public SuccessLoginEvent(LoginUserVO loginUser) {
+    private Context context;
+
+    public SuccessLoginEvent(LoginUserVO loginUser, Context context) {
         this.loginUser = loginUser;
+        this.context = context;
     }
 
     public LoginUserVO getLoginUser() {
         return loginUser;
+    }
+
+    public Context getContext() {
+        return context;
     }
 }

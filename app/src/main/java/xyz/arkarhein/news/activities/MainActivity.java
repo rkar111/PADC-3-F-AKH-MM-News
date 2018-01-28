@@ -190,6 +190,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onTapLogout() {
-        LoginUserModel.getsObjInstance().logout();
+        LoginUserModel.getsObjInstance(getApplicationContext()).logout();
     }
 }

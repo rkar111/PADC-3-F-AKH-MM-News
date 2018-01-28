@@ -27,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/btn_to_register"
         android:layout_alignEnd="@id/btn_to_register"
-
         android:text="@string/lbl_to_login" />
 
 </xyz.arkarhein.news.viewpods.BeforeLoginViewPod>
