@@ -89,4 +89,5 @@ public class LoginUserModel {
     public LoginUserVO getmLogInUSer() {
         return mLogInUSer;
     }
+
 }

@@ -77,7 +77,7 @@ public class NewsByCategoryFragment extends Fragment implements NewsActionDelega
     }
 
     @Override
-    public void onTapSendButton() {
+    public void onTapSendButton(NewsVO news) {
 
     }
 

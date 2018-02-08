@@ -94,6 +94,7 @@
             android:weightSum="2">
 
             <FrameLayout
+                android:id="@+id/fl_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -114,9 +115,11 @@
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/fl_sent_to"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:foreground="@drawable/ripple_primary"
                 android:padding="8dp">
 
                 <TextView
